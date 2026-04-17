@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airis & Berhn - Our Wedding</title>
+    <style>
+        /* Digital Invitation Palette & Fonts */
+        :root {
+            --invitation-gold: #bda34b; /* Recreated Formal Gold */
+            --invitation-cream: #fdfcf5; /* Recreated Cream Background */
+            --page-background: #e6e5df; /* Subtle background color */
+        }
+
+        /* 1. Body Background with Seamless Pattern */
+        body {
+            /* Fallback color */
+            background-color: var(--page-background); 
+            /* Subtle damask texture *
+             * (Make sure damask-pattern.png is in the same folder) */
+            background-image: url('damask-pattern.png'); 
+            background-repeat: repeat;
+            background-size: 200px; /* Controls the pattern scale */
+            font-family: 'Times New Roman', serif;
+            color: var(--invitation-gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        /* 2. Shimmering Paper Card with Gradient */
+        .invitation-card {
+            /* Create a subtle, shifting cream gradient (like gold leaf) */
+            background: linear-gradient(135deg, 
+                var(--invitation-cream) 0%, 
+                #fff 40%, 
+                var(--invitation-cream) 100%
+            );
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15); /* More dramatic shadow */
+            padding: 50px 30px;
+            text-align: center;
+            border: 2px solid rgba(189, 163, 75, 0.4); /* Thicker border */
+            position: relative;
+            box-sizing: border-box; /* Crucial for padding/size */
+        }
+
+        /* --- Text & Monogram Styling (Keeping from image_1.png) --- */
+        .save-the-date {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        .solemn-unity {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .monogram-container {
+            width: 150px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        /* 3. Gold Aura for the Monogram */
+        .monogram-container::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            background: rgba(189, 163, 75, 0.15);
+            border-radius: 50%;
+            filter: blur(25px); /* Creates a soft glow */
+            z-index: 0;
+        }
+
+        .date-main {
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            margin: 20px 0;
+        }
+
+        .venue-details {
+            font-size: 0.8rem;
+            line-height: 1.8;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .couple-names {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+
+        /* RSVP Form Section */
+        .rsvp-section {
+            border-top: 1px solid rgba(189, 163, 75, 0.2);
+            padding-top: 30px;
+        }
+
+        .rsvp-header {
+            font-size: 1.8rem;
+            letter-spacing: 8px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: transparent;
+            border: 1px solid rgba(189, 163, 75, 0.3);
+            color: #444;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Gold-like Submit Button */
+        button.submit-btn {
+            background-color: var(--invitation-gold);
+            color: var(--invitation-cream);
+            border: none;
+            padding: 12px 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        button.submit-btn:hover { opacity: 0.8; }
+        #status { margin-top: 20px; font-style: italic; color: var(--invitation-gold); font-size: 0.9rem;}
+
+    </style>
+</head>
+<body>
+
+<div class="invitation-card">
+    <div class="save-the-date">Save the Date</div>
+    <div class="solemn-unity">As we bind our lives in solemn unity</div>
+
+    <div class="monogram-container">
+        <svg viewBox="0 0 100 100" style="position: relative; z-index: 1;">
+            <path d="M50,5 A45,45 0 1,1 49.9,5" fill="none" stroke="#bda34b" stroke-width="1" />
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#bda34b" stroke-width="0.5" />
+            <text x="50" y="55" font-family="serif" font-size="25" fill="#bda34b" text-anchor="middle">A & B</text>
+        </svg>
+    </div>
+
+    <div class="date-main">27 JUNE 2026</div>
+
+    <div class="venue-details">
+        Saturday, at 2 PM<br>
+        Alliance of Two Hearts Parish,<br>
+        Banawa, Cebu City
+    </div>
+
+    <div class="couple-names">with love, <br><strong>Airis & Berhn</strong></div>
+
+    <div class="rsvp-section">
+        <div class="rsvp-header">RSVP</div>
+        
+        <form id="rsvpForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Attendance?</label>
+                <select id="attendance">
+                    <option value="Yes">Joyfully Accept</option>
+                    <option value="No">Regretfully Decline</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Dietary Restrictions</label>
+                <textarea id="dietary" rows="2"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Response</button>
+        </form>
+        <p id="status"></p>
+    </div>
+
+</div>
+
+<script>
+    // --- RSVP Script (Do not change this section) ---
+    // Make sure to paste your long Google Web App URL here!
+    const scriptURL = 'YOUR_GOOGLE_WEB_APP_URL_HERE'; 
+    const form = document.getElementById('rsvpForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        status.innerText = "Processing response...";
+        
+        const data = {
+            name: document.getElementById('name').value,
+            attendance: document.getElementById('attendance').value,
+            dietary: document.getElementById('dietary').value
+        };
+
+        fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(data)
+        })
+        .then(() => {
+            status.innerText = "Thank you! Your RSVP has been received.";
+            form.reset();
+        })
+        .catch(error => {
+            status.innerText = "Error. Please try again.";
+        });
+    });
+</script>
+
+</body>
+</html>
